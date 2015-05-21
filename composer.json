@@ -6,10 +6,10 @@
     "homepage": "http://obophp.org",
     "license": ["Apache-2.0"],
     "autoload": {
-        "classmap": ["src"]
+        "classmap": ["src/"]
     },
     "require": {
         "php": ">=5.4.0",
-        "obo/obo": "dev-master"
+        "obo/obo": "@dev"
     }
 }
