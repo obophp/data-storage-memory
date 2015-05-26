@@ -10,6 +10,6 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "obo/obo": "@dev"
+        "obo/obo": "0.8.*"
     }
 }
