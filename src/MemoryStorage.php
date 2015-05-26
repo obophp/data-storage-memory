@@ -27,52 +27,26 @@ class MemoryStorage implements \obo\Interfaces\IDataStorage {
     }
 
     /**
-     * @param string $repositoryName
-     * @return boolean
-     */
-    public function existsRepositoryWithName($repositoryName) {
-        return isset($this->schema[$repositoryName]);
-    }
-
-    /**
-     * @param string $repositoryName
-     * @return array
-     */
-    public function columnsInRepositoryWithName($repositoryName) {
-        if (!$this->existsRepositoryWithName($repositoryName)) throw new \obo\Exceptions\Exception("Repository '{$repositoryName}' does not exists");
-        return $this->schema[$repositoryName];
-    }
-
-    /**
      * @param \obo\Carriers\QueryCarrier $queryCarrier
      * @return string
+     * @throws \obo\Exceptions\Exception
      */
     public function constructQuery(\obo\Carriers\QueryCarrier $queryCarrier) {
         throw new \obo\Exceptions\Exception("Not implemented yet");
     }
 
     /**
-     * @param \obo\Entity $entity
-     * @return array
-     */
-    public function dataForEntity(\obo\Entity $entity) {
-        $repositoryName = $entity->entityInformation()->repositoryName;
-        $primaryPropertyValue = $entity->primaryPropertyValue();
-        return (array) $this->data[$repositoryName][$primaryPropertyValue];
-    }
-
-    /**
      * @param \obo\Carriers\QueryCarrier $queryCarrier
-     * @return array
+     * @throws \obo\Exceptions\Exception
      */
-    public function dataFromQuery(\obo\Carriers\QueryCarrier $queryCarrier) {
+    public function dataForQuery(\obo\Carriers\QueryCarrier $queryCarrier) {
         throw new \obo\Exceptions\Exception("Not implemented yet");
     }
 
     /**
      * @param \obo\Carriers\QueryCarrier $queryCarrier
      * @param string $primaryPropertyName
-     * $return int
+     * @throws \obo\Exceptions\Exception
      */
     public function countRecordsForQuery(\obo\Carriers\QueryCarrier $queryCarrier, $primaryPropertyName) {
         throw new \obo\Exceptions\Exception("Not implemented yet");
@@ -90,7 +64,6 @@ class MemoryStorage implements \obo\Interfaces\IDataStorage {
 
     /**
      * @param \obo\Entity $entity
-     * @return void
      */
     public function updateEntity(\obo\Entity $entity) {
         $this->insertEntity($entity);
@@ -98,7 +71,6 @@ class MemoryStorage implements \obo\Interfaces\IDataStorage {
 
     /**
      * @param \obo\Entity $entity
-     * @return void
      */
     public function removeEntity(\obo\Entity $entity) {
         $primaryPropertyValue = $entity->primaryPropertyValue();
@@ -109,7 +81,7 @@ class MemoryStorage implements \obo\Interfaces\IDataStorage {
     /**
      * @param string $repositoryName
      * @param array $entities
-     * @return void
+     * @throws \obo\Exceptions\Exception
      */
     public function createRelationshipBetweenEntities($repositoryName, array $entities) {
         throw new \obo\Exceptions\Exception("Not implemented yet");
@@ -118,7 +90,7 @@ class MemoryStorage implements \obo\Interfaces\IDataStorage {
     /**
      * @param string $repositoryName
      * @param array $entities
-     * @return void
+     * @throws \obo\Exceptions\Exception
      */
     public function removeRelationshipBetweenEntities($repositoryName, array $entities) {
         throw new \obo\Exceptions\Exception("Not implemented yet");

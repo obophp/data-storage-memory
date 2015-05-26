@@ -1,7 +1,7 @@
 {
     "name": "obo/data-storage-memory",
     "type": "library",
-    "description": "",
+    "description": "Simple memory data storage for Obo framework",
     "keywords": ["framework", "domain logic", "orm", "database"],
     "homepage": "http://obophp.org",
     "license": ["Apache-2.0"],
@@ -10,6 +10,6 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "obo/obo": "@dev"
+        "obo/obo": "0.9.*"
     }
 }
