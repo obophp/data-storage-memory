@@ -79,6 +79,28 @@ class MemoryStorage implements \obo\Interfaces\IDataStorage {
     }
 
     /**
+     * @param \obo\Carriers\QueryCarrier $specification
+     * @param string $repositoryName
+     * @param \obo\Entity $owner
+     * @param string $targetEntity
+     * @return int
+     */
+    public function countEntitiesInRelationship(\obo\Carriers\QueryCarrier $specification, $repositoryName, \obo\Entity $owner, $targetEntity) {
+        throw new \obo\Exceptions\Exception("Not implemented yet");
+    }
+
+    /**
+     * @param \obo\Carriers\QueryCarrier $specification
+     * @param string $repositoryName
+     * @param \obo\Entity $owner
+     * @param string $targetEntity
+     * @return array
+     */
+    public function dataForEntitiesInRelationship(\obo\Carriers\QueryCarrier $specification, $repositoryName, \obo\Entity $owner, $targetEntity) {
+        throw new \obo\Exceptions\Exception("Not implemented yet");
+    }
+
+    /**
      * @param string $repositoryName
      * @param array $entities
      * @throws \obo\Exceptions\Exception
@@ -95,4 +117,5 @@ class MemoryStorage implements \obo\Interfaces\IDataStorage {
     public function removeRelationshipBetweenEntities($repositoryName, array $entities) {
         throw new \obo\Exceptions\Exception("Not implemented yet");
     }
+
 }
