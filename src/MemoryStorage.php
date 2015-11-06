@@ -48,7 +48,7 @@ class MemoryStorage implements \obo\Interfaces\IDataStorage {
      * @param string $primaryPropertyName
      * @throws \obo\Exceptions\Exception
      */
-    public function countRecordsForQuery(\obo\Carriers\QueryCarrier $queryCarrier, $primaryPropertyName) {
+    public function countRecordsForQuery(\obo\Carriers\QueryCarrier $queryCarrier) {
         throw new \obo\Exceptions\Exception("Not implemented yet");
     }
 
